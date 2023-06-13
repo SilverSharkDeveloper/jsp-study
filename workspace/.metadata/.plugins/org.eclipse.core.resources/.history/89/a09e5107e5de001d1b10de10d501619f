@@ -1,0 +1,4 @@
+
+//썸머노트 플레이스홀더
+const $note_editable = document.querySelector(".note-editable");
+$note_editable.firstElementChild.placeholder = "멋진 여행을 기록해보세요!";

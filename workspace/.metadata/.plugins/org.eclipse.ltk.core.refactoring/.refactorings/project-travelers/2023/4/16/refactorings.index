@@ -1,0 +1,34 @@
+1681644351624	Delete element
+1681700061445	Rename resource 'form'
+1681700145342	Delete element
+1681700159083	Delete element
+1681720331248	Delete element
+1681738439223	Move file
+1681802835388	Delete element
+1681837188341	Delete element
+1681840182566	Delete element
+1681878102897	Delete element
+1681878106082	Delete element
+1682073857808	Delete element
+1682140484550	Delete element
+1682141398214	Delete element
+1682152549607	Delete element
+1682165047117	Delete element
+1682167247216	Delete element
+1682168646208	Rename resource 'NoticeBoardMapper.xml'
+1682168650042	Rename resource 'QuestionBoardMapper.xml'
+1682168652812	Rename resource 'TripBoardMapper.xml'
+1682168661122	Rename resource 'TripItemBoardMapper.xml'
+1682168669189	Rename resource 'ItemBoardMapper.xml'
+1682168675109	Rename resource 'TripRouteBoardMapper.xml'
+1682168683987	Rename resource 'NoticeCommentMapper.xml'
+1682168690410	Rename resource 'QuestionCommentMapper.xml'
+1682168693584	Rename resource 'TripCommentMapper.xml'
+1682168698780	Rename resource 'TripItemCommentMapper.xml'
+1682168704425	Rename resource 'TripRouteCommentMapper.xml'
+1682168716962	Rename resource 'BoardImageMapper.xml'
+1682168719431	Rename resource 'BoardLocationMapper.xml'
+1682168722580	Rename resource 'BoardTagMapper.xml'
+1682168725419	Rename resource 'BoardVoteMapper.xml'
+1682168735003	Rename resource 'TripRouteSourceMapper.xml'
+1682168739617	Rename resource 'UserMapper.xml'

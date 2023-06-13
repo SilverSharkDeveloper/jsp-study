@@ -1,0 +1,16 @@
+
+//썸머노트 플레이스홀더느낌
+$(document).ready(function() {
+	$('#summernote').summernote();
+	const $note_editable = document.querySelector(".note-editable");
+	$note_editable.firstElementChild.innerHTML = "멋진 여행을 기록해보세요!";
+	$note_editable.addEventListener("click", e => {
+		e.target.innerText = "";
+	})
+
+});
+
+//플레이스홀더 클릭하면 없애주기
+
+
+

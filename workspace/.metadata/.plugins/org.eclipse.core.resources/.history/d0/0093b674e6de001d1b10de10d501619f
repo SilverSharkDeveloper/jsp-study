@@ -1,0 +1,14 @@
+
+//썸머노트 플레이스홀더
+ $(document).ready(function() {
+        $('#summernote').summernote();
+const $note_editable = document.querySelector(".note-editable");
+console.log($note_editable);
+$note_editable.firstElementChild.style.placeholder ="멋진 여행을 기록해보세요!";
+    });
+/*let note_editable_p = document.createElement("p");
+note-editable.append(note_editable_p);
+*/
+/*$note_editable.firstElementChild.placeholder = "멋진 여행을 기록해보세요!";*/
+
+/*console.log($note_editable.firstElementChild);*/

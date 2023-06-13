@@ -1,0 +1,41 @@
+jsp:forward 에 파람 넣어서 전송시
+setCharacterEncoding 을 response가 아닌 request에 해야하는 이유 (보내는건데)
+
+
+Resultset 객체로 한 행의 모든 정보 가져오는 방법 -> (ArrayList Object)로 받아도 어차피 필드변수의 타입으로 다운캐스팅 필요
+finally {
+				try {
+					if(rs!= null) {
+						rs.close();
+					}
+					if(pstm != null) {
+						pstm.close();
+					}
+					if(conn != null) {
+						conn.close();
+					}
+				} catch (SQLException e) {
+					throw new RuntimeException(e);
+					
+				}
+
+->만약 닫는도중 문제가 생긴다면 강제종료를 시키고 싶은데 컴파일 오류로 예외처리 해주지않으면 실행이 안되서
+예외처리를 잡고 강제종료시키는 예외를 던진다?
+무슨오류인지알기위해서 e 전달
+
+전방향 이동오류
+ResultSet의 Type과 Concurrency의 Type은 Statement 생성시에 선언해 주며, 각각의
+Type은 다음과 같다.
+
+* ResultSet / Concurrency Type 선언
+Statement stmt = conn.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
+ResultSet.CONCUR_UPDATABLE);
+
+* ReusltSet의 Type (A)
+1) TYPE_FORWARD_ONLY : scroll이 불가능한 forwad only 형
+2) TYPE_SCROLL_INSENSITIVE : scroll은 가능하나, 변경된 사항은 적용되지 않음
+3) TYPE_SCROLL_SENSITIVE : scroll은 가능하며, 변경된 사항이 적용됨
+
+* CONCURRENCY의 TYPE (B)
+1) CONCUR_READ_ONLY : resultset object의 변경이 불가능
+2) CONCUR_UPDATABLE : resultset object의 변경이 가능

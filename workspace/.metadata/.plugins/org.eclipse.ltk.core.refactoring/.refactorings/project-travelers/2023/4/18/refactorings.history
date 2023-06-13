@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.app.services.noticeBoard.controller.NoticeBoardCommentOk.java&apos; to &apos;NoticeBoardCommentOkController.java&apos;&#x0D;&#x0A;- Original project: &apos;project-travelers&apos;&#x0D;&#x0A;- Original element: &apos;com.app.services.noticeBoard.controller.NoticeBoardCommentOk.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.app.services.noticeBoard.controller.NoticeBoardCommentOkController.java&apos;" description="Rename compilation unit &apos;NoticeBoardCommentOk.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;com.app.services.noticeBoard.controller{NoticeBoardCommentOk.java" name="NoticeBoardCommentOkController.java" references="false" stamp="1682886006883" version="1.0"/>
+</session>

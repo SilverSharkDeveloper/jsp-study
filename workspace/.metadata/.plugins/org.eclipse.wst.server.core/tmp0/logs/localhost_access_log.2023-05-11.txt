@@ -1,0 +1,8 @@
+127.0.0.1 - - [11/May/2023:08:05:08 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [11/May/2023:08:05:09 +0900] "GET /templates/admin/admin.jsp HTTP/1.1" 200 3154
+0:0:0:0:0:0:0:1 - - [11/May/2023:08:05:09 +0900] "GET /static/css/admin/admin-header-nav.css HTTP/1.1" 200 1607
+0:0:0:0:0:0:0:1 - - [11/May/2023:08:05:09 +0900] "GET /static/css/admin/admin.css HTTP/1.1" 200 1435
+0:0:0:0:0:0:0:1 - - [11/May/2023:08:05:09 +0900] "GET /static/js/admin/admin-nav.js HTTP/1.1" 200 718
+0:0:0:0:0:0:0:1 - - [11/May/2023:08:05:09 +0900] "GET /static/js/admin/admin.js HTTP/1.1" 200 763
+0:0:0:0:0:0:0:1 - - [11/May/2023:08:05:09 +0900] "GET /static/image/logo.png HTTP/1.1" 200 29080
+0:0:0:0:0:0:0:1 - - [11/May/2023:08:05:10 +0900] "GET /favicon.ico HTTP/1.1" 404 818

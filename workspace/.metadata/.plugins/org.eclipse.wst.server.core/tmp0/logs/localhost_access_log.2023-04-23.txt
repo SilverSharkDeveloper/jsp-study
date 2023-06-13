@@ -1,0 +1,12 @@
+127.0.0.1 - - [23/Apr/2023:17:42:21 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [23/Apr/2023:17:42:22 +0900] "GET /project-travelers/templates/search/home.jsp HTTP/1.1" 200 36153
+0:0:0:0:0:0:0:1 - - [23/Apr/2023:17:42:22 +0900] "GET /project-travelers/static/css/header-footer/header.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [23/Apr/2023:17:42:22 +0900] "GET /project-travelers/static/css/font/font.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [23/Apr/2023:17:42:22 +0900] "GET /project-travelers/static/css/search/home.css HTTP/1.1" 200 19993
+0:0:0:0:0:0:0:1 - - [23/Apr/2023:17:42:22 +0900] "GET /project-travelers/static/css/header-footer/footer.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [23/Apr/2023:17:42:22 +0900] "GET /project-travelers/static/js/search/home.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [23/Apr/2023:17:42:22 +0900] "GET /assets/images/svg/arrow_right_topBanner.svg HTTP/1.1" 404 862
+0:0:0:0:0:0:0:1 - - [23/Apr/2023:17:42:22 +0900] "GET /project-travelers/static/css/header-footer/download.ed23b0af8bbdf45d.svg HTTP/1.1" 404 895
+0:0:0:0:0:0:0:1 - - [23/Apr/2023:17:42:23 +0900] "GET /project-travelers/static/css/header-footer/chevron_up.3db1f7ee401e3d2d.svg HTTP/1.1" 404 897
+0:0:0:0:0:0:0:1 - - [23/Apr/2023:17:42:23 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [23/Apr/2023:17:42:26 +0900] "GET /places/36270 HTTP/1.1" 404 823

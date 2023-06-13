@@ -1,0 +1,83 @@
+a.jsp(로그인페이지로이동요청) -> 회원과 관련된 요청 -> web.xml (*.member)로 매핑된 모든 요청은 memberFC로 보냄
+
+->memberfrontcontroller(서블릿) ->.member앞에 어떤 요청이왔는지 타겟으로 찾아냄
+->타겟에따라 다른 컨트롤러호출 ->컨트롤러에서 각 로직 수행 후 결과를 Result로 리턴 
+->각 분기마다 Result에 담아 한번에 일괄처리로 다음페이지 응답
+
+Action(인터페이스) ->execute메소드에 파라미터로 req,resp를 받아 controller에서 사용하게 강제시킴과 동시에 컨트롤러임을 명시해줌 ->귀찮은 코드 매번 컨트롤러에서 쓰지않아도되는 일괄처리 가능 (IOE,Servlet 익셉션 던지기)
+
+controller(클래스) -> Action 인터페이스를 구현해 각 컨트롤러에 맞는 로직을 수행한 후 path와 isRedirect를 정의한 클래스 Result를 반환하는 exectute를 재정의함
+
+Result(클래스) -> 다음 경로를 알려줄 path와 forward로 보낼지 redirect로 보낼지를 정의할 불린변수 isRedirect를 가진 클래스
+
+DAO 컨트롤러에서 사용할 DB연산 로직 메서드를 정의해놓는 객체
+DAO에 하나의 메소드는 반드시 하나의 쿼리만 날리도록 만듬 mapper의 매핑이름이랑 똑같이 만듬, 1대1매칭
+DAO는 하나의 테이블에 관련된 db연산 로직 메서드를 정의함 -> mapper도 테이블별 하나씩 만들음 (name을 테이블명으로 보통 지정)
+
+VO DB연관된 모든 필드를 가진 객체(테이블의 컬럼그대로를 정의)
+
+
+1.로그인페이지로 이동요청 -> web.xml -> *.member ->memberfc -> target확인 -> 타겟컨트롤러 실행 -> req,resp를 받아서 path를 설정할 로직 실행 -> dao에서 db연산 조회 -> mapper.xml에 연결된 db연산 으로부터 연산결과를받아 그 결과로 path를 결정함 
+->다음페이지에 따라 forward로 할지 redirect로 할지 결정 ->Result객체로 담아 리턴 -> memberfc에서 분기별 정확한 컨트롤러를 실행한 결과 값으로 Result를 받아 마지막에 일괄처리로 다음페이지를 응답 (필요에따라 다시 web.xml을 통해 fc로 갈 수 있음)
+
+forward ->요청정보를 그대로 가지고 다음 페이지로 이동 ->다음페이지의 요청이아닌 이전페이지의 요청이 남아있음 ->req가 지속되므로 req영역안에 필요한 정보를 사용할 수 있다는 장점이 있음 -> 새로고침시 이전경로로 다시 요청을하는 단점이 있음
+
+redirect -> 완전히 새로운 주소로 요청 ->이전 요청정보가 다 사라짐 ->새로고침해도 새로운 페이지 응답 -> req가 초기화되므로 이전 요청에대한 정보가 아예 사라짐-> 이전 요청에 필요한 정보가 있다면 쿼리스트링으로전달 (session 또는 cookie로도 가능)
+**만약 응답할 새로운 페이지가 주소창에 보이면 안되는 정보가 있다면 다시 web.xml로 매핑된 주소로 응답해 fc를 통해 재전달 할 수 도 있음 이때는 마지막 응답이 forward로 함
+
+
+
+
+
+===========================================================================================================
+mybatis.config.xml
+
+settings ->setting -> name ="mapUnderscoreToCamelCase value ="true" ->db쪽 컬럼에 언더바표기법이 자동 카멜로변형
+
+typealiases -> 경로를 특정해준 이름으로 사용가능
+
+environments  ->환경설정
+
+mappers -> mapper.xml 경로 매핑
+
+==============================================
+mybatisConfig.java
+->sqlSessionFactory를 만들어줌
+
+===========================================
+DAO->하나의 테이블당 보통 하나 
+SqlSession을 필드로 정의
+생성자에 sqlsession 에 sessionFactory.opensession(true)로 sqlsession 객체 저장
+=>openssion(true)로 true를 넘겨주어야 오토커밋 진행 없으면 커밋이 안댐
+
+각각에 맞는 쿼리 메서드 지정 ->메서드이름은 반드시 매퍼에 id랑 같아야함 ->1대1매칭 ->메서드하나당 쿼리하나
+sqlsession에 있는 메서드 사용 -> 첫번째 파라미터는 문자열값으로 매퍼에 namespace.id값 작성 , 두번째 파라미터는 전달할 파라미터 
+
+결과값 :
+selectOne ->한개
+selectList ->여러개
+
+return시 자동 다운 캐스팅(원래는 반드시 Object타입)
+
+
+=================================================================
+mapper.xml
+<mapper namespace ="member"> ->sqlsession 메서드에 첫번째 인자로 전달할 파라미터 앞에올 이름
+
+mapper안에 insert,update,delete,select 태그를 만들어 sql을 매핑해둠 -> id 속성으로 메서드이름을 지정
+->parameterType 으로 어떤 타입에 파라미터가올지 작성(생략가능)
+
+**select는 반드시 반환을 하므로 resultType을 반드시 맞는 타입으로 작성
+->객체라면 객체경로 (mybatis.config.xml 에 typeAlias로 경로를 지정해놓은 이름을적어도 됨)
+->원시타입이라면 _int 래퍼객체면 int 라고 작성
+
+sql문 작성할때 #{}안에 전달받은 파라미터값 작성 가능
+1.객체라면 필드명
+2.맵이라면 키값
+...
+
+
+
+ 
+
+

@@ -1,0 +1,31 @@
+1682237919062	Delete element
+1682348825972	Rename compilation unit 'MybatisConfig.java'
+1682397515042	Delete element
+1682400651148	Rename type 'TropCommentVO'
+1682402977908	Rename type 'ItemCommentVO'
+1682402984609	Rename type 'NoticeCommentVO'
+1682402992581	Rename type 'QuestionCommentVO'
+1682402999067	Rename type 'RouteCommentVo'
+1682403005388	Rename type 'TripCommentVO'
+1682403118307	Rename type 'RouteBoardCommentVo'
+1682403218898	Rename resource 'routeCourceMapper.xml'
+1682433852477	Move file
+1682433930481	Copy file
+1682433936195	Delete element
+1682444437870	Move compilation unit
+1682445860298	Move compilation unit
+1682445877453	Move compilation unit
+1682453448655	Rename compilation unit 'TropBoardDAO.java'
+1682510785580	Move 'admin-trip-board.js' to 'admin'
+1682515494009	Delete element
+1682563493014	Delete element
+1682570542207	Rename type 'AdminTrioBoardDeleteController'
+1682586794733	Rename resource 'announcement-notice.jsp'
+1682618553022	Rename type 'AdminAnnouncementAnswerController'
+1682678285312	Delete elements
+1682686398645	Delete element
+1682686400180	Delete element
+1682795084334	Delete element
+1682795655698	Delete element
+1682799781540	Delete element
+1682799785721	Delete elements

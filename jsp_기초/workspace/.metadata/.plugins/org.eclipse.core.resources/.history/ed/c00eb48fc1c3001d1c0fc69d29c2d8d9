@@ -1,0 +1,28 @@
+package test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+public class Test {
+	public static void main(String[] args) {
+		int [] arInt = {1,2,3};
+		String [] arStr = {};
+		List<Integer> intList = new ArrayList<>();
+		List<Integer> intList2 = new ArrayList<>();
+		
+	int [][]arr = new int [3][2];
+	int[] ar12  =IntStream.rangeClosed(arr[0][0], arr[0][1]).filter( i-> IntStream.rangeClosed(arr[1][0],arr[1][1]).anyMatch(v -> v==i)).toArray();
+	int[] ar13	=IntStream.rangeClosed(arr[0][0], arr[0][1]).filter( i-> IntStream.rangeClosed(arr[2][0],arr[2][1]).anyMatch(v -> v==i)).toArray();
+	int[] ar23	=IntStream.rangeClosed(arr[1][0], arr[1][1]).filter( i-> IntStream.rangeClosed(arr[2][0],arr[2][1]).anyMatch(v -> v==i)).toArray();
+	int [] ar123 =IntStream.rangeClosed(ar12[0], ar12[ar12.length-1]).filter(i -> IntStream.rangeClosed(ar13[0],ar13[ar13.length-1]).anyMatch(v-> v==i)).filter(j->
+	IntStream.rangeClosed(ar23[0], ar23[ar23.length-1]).anyMatch(k -> k==j)).toArray();
+	
+	
+	}
+	
+}
+ 
